@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ActionScript：计算机语言概览 - Shaucky</title>
+  <meta name="description" content="">
+  <link rel="canonical" href="https://dev.shaucky.cn/lang/actionscript.html">
+  <meta property="og:title" content="ActionScript：计算机语言概览">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dev.shaucky.cn/lang/actionscript.html">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"ActionScript：计算机语言概览",
+    "description":"",
+    "inLanguage":"zh-CN",
+    "mainEntityOfPage":"https://dev.shaucky.cn/lang/actionscript.html"
+  }
+  </script>
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.8/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.css">
+
+
+  <link rel="stylesheet" href="../css/lang/template.css"/>
+</head>
+
+<body>
+  <header class="animate__animated animate__fadeInDown">
+    <div class="container">
+        <div class="d-flex flex-column align-items-center gap-3">
+            <div class="brand-pill">
+                <i class="fa-solid fa-code"></i>
+                <span id="lang-series">计算机语言概览</span>
+            </div>
+
+            <h1 class="display-5 fw-bold mb-0" id="lang-title">ActionScript</h1>
+            <p class="lead mb-0" id="lang-subtitle"></p>
+            <div class="d-flex flex-wrap gap-2 justify-content-center mt-2" id="lang-tags"></div>
+            <div class="d-flex gap-2 mt-3">
+                <a class="btn btn-ghost" href="./">← 返回</a>
+                <a class="btn btn-brand" href="#content">开始阅读</a>
+            </div>
+        </div>
+    </div>
+  </header>
+
+  <main class="container my-5" id="content">
+    <div class="page-card animate__animated animate__fadeInUp">
+        <div class="row g-3">
+            <div class="col-12 col-lg-7">
+                <h3 class="section-title mb-3">
+                    <i class="fa-solid fa-book-open me-2"></i>简介
+                </h3>
+                <div id="lang-overview" class="text-secondary" style="text-indent:2em;">
+                    
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <div class="row g-3" id="lang-stats"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-card animate__animated animate__fadeInUp">
+        <div class="row g-3 align-items-stretch">
+            <div class="col-12 col-lg-6">
+                <h3 class="section-title mb-3">
+                    <i class="fa-solid fa-lightbulb me-2"></i>设计目标与特性
+                </h3>
+                <div id="lang-features" class="d-flex flex-wrap gap-2"></div>
+
+                <div class="mt-3 text-secondary" id="lang-notes" style="text-indent:2em;"></div>
+            </div>
+            
+            <div class="col-12 col-lg-6">
+                <h3 class="section-title mb-3">
+                    <i class="fa-solid fa-terminal me-2"></i>语法示例
+                </h3>
+                <pre class="codebox"><code id="lang-code" class="language-actionscript"></code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-card animate__animated animate__fadeInUp">
+        <h3 class="section-title mb-3">
+            <i class="fa-solid fa-timeline me-2"></i>发展时间线
+        </h3>
+        <div class="timeline" id="lang-timeline"></div>
+    </div>
+    
+    <div class="page-card animate__animated animate__fadeInUp">
+        <h3 class="section-title mb-3">
+            <i class="fa-solid fa-diagram-project me-2"></i>生态与代表应用
+        </h3>
+        <div class="row g-3">
+            <div class="col-12 col-lg-6">
+                <h5 class="fw-bold mb-2" style="color:var(--deep);">常见使用场景</h5>
+                <ul class="mb-0" id="lang-uses"></ul>
+            </div>
+            <div class="col-12 col-lg-6">
+                <h5 class="fw-bold mb-2" style="color:var(--deep);">代表平台</h5>
+                <ul class="mb-0" id="lang-ecosystem"></ul>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="text-center py-5 wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+    <p style="font-size: 20px;text-decoration: underline;">Contact <b>ME</b>:</p>
+    <div id="footer-contacts" style="user-select: none;visibility: hidden;">
+        <a class="soc-icon" target="_blank" href="https://space.bilibili.com/11605064">
+            <i class="fa-brands fa-bilibili"></i>
+        </a>
+        <a class="soc-icon" target="_blank" href="https://github.com/shaucky">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+    <p>©2026 Shaucky. All Rights Reserved.</p>
+  </footer>
+  
+  <script src="../js/font/fontawesome.min.js"></script>
+  <script src="../js/font/brands.min.js"></script>
+  <script src="../js/font/solid.min.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  <script>
+    const LANG_DATA = {
+      name: "ActionScript",
+      subtitle: "交互媒体的启蒙者：动态、时间轴、事件流",
+      tags: ["1990s", "AIR", "桌面应用", "游戏开发", "互联网"],
+      theme: { bg: "#fff1f2", brand: "#b91c1c", brand2: "#ff2d55", deep: "#180506", accent: "#f43f5e" },
+      overview: "ActionScript主要用于交互内容开发，现由Wipro维护。ActionScript具备完整的面向对象结构，适用于工程化开发，主要应用于大型网页游戏、富媒体交互课件、企业软件、动画软件、独立游戏等领域。核心环境AIR先后由Adobe、Harman和Wipro维护。",
+      stats: [
+        { k:"首次发布", v:"1997年" },
+        { k:"典型应用", v:"跨平台交互软件开发" },
+        { k:"运行环境", v:"AIR / Royale / Flash Player" },
+        { k:"语言风格", v:"ECMA-262 / ECMA-357" }
+      ],
+      timeline: [
+        { year:"1997", text:"Flash 2.0附带了一个脚本功能，这使得动画可被控制，而非简单的线性时间轴。" },
+        { year:"1999", text:"到了Flash 4.0时期，这个脚本功能被正式称作Actions，并且具备了基本的程序结构语法。例如变量、条件语句、循环等。" },
+        { year:"2000", text:"ActionScript 1.0推出，采用基于ECMAScript的原型编程，新增对on语句和onClipEvent语句的支持。它支持过程式编程和面向对象编程，作为Flash 5.0的一部分推出。" },
+        { year:"2002", text:"此时虽然还叫做ActionScript 1.0，但是引入了新的事件侦听器模型，从而使程序能够以更灵活的条件进行异步编程。" },
+        { year:"2003", text:"ActionScript 2.0引入了许多特性，知名的包括类相关能力，extends、implements等，以及变量的强类型声明，还有import语句等。ActionScript 2.0可以交叉编译为1.0的字节码，因此仍然向后兼容。" },
+        { year:"2007", text:"ActionScript 3.0是一次大刀阔斧的更新，变成了完全的面向对象编程语言，强制使用package、class等结构。此外，定义了int和uint基元类型，引入了DOM3的事件模型和E4X的语法，并优化了性能。这些更改的代价是引入了新的虚拟机，ActionScript 3.0不再和ActionScript 1.0&2.0一起执行。" },
+        { year:"2008", text:"这一年为ActionScript 3.0引入了Vector.&lt;T&gt;，作为泛型数组使用。这也是语言内唯一的泛型实现。同一年，AIR 1.0发布，标志着ActionScript从浏览器开发走向应用开发。" },
+        { year:"2022", text:"ActionScript 3.1引入了空值合并运算符、可选链运算符以及逐字字符串等特性。同一时期，AIR 50.0发布。" },
+        { year:"2024", text:"随着AIR 51.0发布，引入了单精度浮点数float。单精度浮点数占用双精度浮点数一半的内存，因此在性能需求高的场景下更具意义。" }
+      ],
+      features: ["事件流", "Stage3D", "反射", "类型系统", "显示对象", "OOP"],
+      notes: "从早期的Flash到后来的AIR，如果你尝试在这些平台进行开发，你会发现它们的核心思想是事件流。ActionScript几乎无处不用事件，这也是人机交互的一个特点，用户的每一次输入都可以视作一个事件，而媒体只需要对事件进行响应即可。当事件流足够合理之时，整个交互程序便架构完善了。",
+      code: "package {\n  import flash.display.Sprite;\n  import flash.text.TextField;\n\n  public class Main extends Sprite {\n    public function Main() {\n      var t:TextField = new TextField();\n      t.text = \"Hello, ActionScript!\";\n      addChild(t);\n    }\n  }\n}\n",
+      prismLang: "actionscript",
+      uses: ["客户端应用","游戏开发","多媒体课件与互动内容","网页互动动画与广告"],
+      ecosystem: ["AVM2 / Adobe AIR","Flash Player","APM包管理器","Starling","Adobe Animate"]
+    };
+
+    function applyTheme(theme) {
+      if (!theme) return;
+      const root = document.documentElement;
+      const map = { bg:'--bg', card:'--card', text:'--text', muted:'--muted', brand:'--brand', brand2:'--brand2', deep:'--deep', accent:'--accent' };
+      Object.keys(map).forEach(k => theme[k] && root.style.setProperty(map[k], theme[k]));
+    }
+
+    function renderLanguage(data) {
+      if (!data) return;
+      applyTheme(data.theme);
+
+      document.getElementById('lang-title').textContent = data.name || '';
+      document.getElementById('lang-subtitle').textContent = data.subtitle || '';
+
+      const tagBox = document.getElementById('lang-tags');
+      tagBox.innerHTML = '';
+      (data.tags || []).forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'badge-soft';
+        span.textContent = t;
+        tagBox.appendChild(span);
+      });
+
+      document.getElementById('lang-overview').textContent = data.overview || '';
+
+      const stats = document.getElementById('lang-stats');
+      stats.innerHTML = '';
+      (data.stats || []).forEach(s => {
+        const col = document.createElement('div');
+        col.className = 'col-12 col-sm-6';
+        col.innerHTML = `<div class="stat"><p class="k mb-0">${s.k||''}</p><p class="v mb-0">${s.v||''}</p></div>`;
+        stats.appendChild(col);
+      });
+
+      const tl = document.getElementById('lang-timeline');
+      tl.innerHTML = '';
+      (data.timeline || []).forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'tl-item';
+        div.innerHTML = `<div class="tl-dot"></div><div class="tl-year">${item.year||''}</div><div class="tl-desc text-secondary">${item.text||''}</div>`;
+        tl.appendChild(div);
+      });
+
+      const feat = document.getElementById('lang-features');
+      feat.innerHTML = '';
+      (data.features || []).forEach(f => {
+        const span = document.createElement('span');
+        span.className = 'badge text-bg-light border';
+        span.style.borderRadius = '999px';
+        span.style.fontWeight = '800';
+        span.textContent = f;
+        feat.appendChild(span);
+      });
+
+      document.getElementById('lang-notes').textContent = data.notes || '';
+      const codeEl = document.getElementById('lang-code');
+      codeEl.className = '';
+      codeEl.classList.add(`language-${data.prismLang || 'clike'}`);
+      codeEl.textContent = data.code || '';
+      if (window.Prism) {
+        Prism.highlightElement(codeEl);
+      }
+
+      const uses = document.getElementById('lang-uses');
+      uses.innerHTML = '';
+      (data.uses || []).forEach(u => { const li=document.createElement('li'); li.textContent=u; uses.appendChild(li); });
+
+      const eco = document.getElementById('lang-ecosystem');
+      eco.innerHTML = '';
+      (data.ecosystem || []).forEach(e => { const li=document.createElement('li'); li.textContent=e; eco.appendChild(li); });
+
+      if (typeof WOW === 'function') new WOW().init();
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      const c = document.getElementById('footer-contacts');
+      if (c) c.style.visibility = '';
+      renderLanguage(LANG_DATA);
+    });
+  </script>
+  <link rel="stylesheet" href="../css/font/fontawesome.min.css" />
+  <link rel="stylesheet" href="../css/font/brands.min.css" />
+  <link rel="stylesheet" href="../css/font/solid.min.css" />
+</body>
+</html>

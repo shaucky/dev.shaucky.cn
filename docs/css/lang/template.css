@@ -1,0 +1,197 @@
+:root {
+    --bg: #f7f8fb;
+    --card: #ffffff;
+    --text: #1e1f22;
+    --muted: #6c757d;
+    --brand: #3a5bdc;
+    --brand2: #0ea5e9;
+    --deep: #0b1020;
+    --accent: #22c55e;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    --radius: 14px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background-color: var(--deep);
+    color: #fff;
+    padding: 3.2rem 1rem 2.6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: inherit;
+    filter: blur(110px) brightness(0.55);
+    opacity: .95;
+}
+
+header>* {
+    position: relative;
+    z-index: 1;
+}
+
+.brand-pill {
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    padding: .35rem .75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .12);
+    border: 1px solid rgba(255, 255, 255, .18);
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+}
+
+.page-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.75rem;
+    margin-top: 1.25rem;
+}
+
+.section-title {
+    color: var(--brand);
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: .35rem;
+    top: .2rem;
+    bottom: .2rem;
+    width: 2px;
+    background: linear-gradient(var(--brand), var(--brand2));
+    opacity: .6;
+    border-radius: 2px;
+}
+
+.tl-item {
+    position: relative;
+    padding: .4rem 0 .4rem 1rem;
+}
+
+.tl-dot {
+    position: absolute;
+    left: .11rem;
+    top: .9rem;
+    width: .65rem;
+    height: .65rem;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 20%, transparent);
+}
+
+.tl-year {
+    font-weight: 800;
+    color: var(--deep);
+    font-size: 1.05rem;
+}
+
+.tl-desc {
+    color: var(--text);
+}
+
+.badge-soft {
+    background: color-mix(in srgb, var(--accent) 14%, #ffffff);
+    color: color-mix(in srgb, var(--accent) 70%, #000000);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    font-weight: 700;
+    padding: .35rem .6rem;
+    border-radius: 999px;
+}
+
+pre.codebox {
+    background: #f8f8f8;
+    color: #e5e7eb;
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    margin: 0;
+    overflow: auto;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .16);
+}
+
+pre.codebox code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: .95rem;
+    line-height: 1.5;
+}
+
+.stat {
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    background: linear-gradient(120deg,
+            color-mix(in srgb, var(--brand) 14%, #ffffff),
+            color-mix(in srgb, var(--brand2) 10%, #ffffff));
+    border: 1px solid rgba(0, 0, 0, .05);
+    height: 100%;
+}
+
+.stat .k {
+    font-weight: 800;
+    color: var(--deep);
+    margin: 0;
+}
+
+.stat .v {
+    color: var(--muted);
+    margin: .15rem 0 0;
+}
+
+.btn-brand {
+    --bs-btn-bg: var(--brand);
+    --bs-btn-border-color: var(--brand);
+    --bs-btn-hover-bg: color-mix(in srgb, var(--brand) 84%, #000);
+    --bs-btn-hover-border-color: color-mix(in srgb, var(--brand) 84%, #000);
+    --bs-btn-color: #fff;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: .65rem 1.1rem;
+}
+
+.btn-ghost {
+    border-radius: 999px;
+    padding: .65rem 1.1rem;
+    font-weight: 800;
+    border: 1px solid rgba(255, 255, 255, .25);
+    color: #fff;
+    background: rgba(255, 255, 255, .08);
+}
+
+footer {
+    user-select: none;
+}
+
+footer > * {
+    margin-bottom: 20px;
+}
+
+.soc-icon {
+    font-size: 26px;
+    line-height: 1;
+    color: #333;
+    padding: 0 10px 15px;
+    text-decoration: none;
+}
