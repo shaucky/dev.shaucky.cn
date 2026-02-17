@@ -25,6 +25,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.css">
 
   <link rel="stylesheet" href="../css/lang/template.css"/>
+  <style>
+    :root{--bg:#f6f8ff;--brand:#6b4ee6;--brand2:#0ea5e9;--deep:#1a1037;--accent:#22c55e}
+  </style>
 </head>
 
 <body>
@@ -37,7 +40,7 @@
             </div>
 
             <h1 class="display-5 fw-bold mb-0" id="lang-title">C#</h1>
-            <p class="lead mb-0" id="lang-subtitle"></p>
+            <p class="lead mb-0" id="lang-subtitle">软件工程的适格者：现代、强类型、跨平台</p>
             <div class="d-flex flex-wrap gap-2 justify-content-center mt-2" id="lang-tags"></div>
             <div class="d-flex gap-2 mt-3">
                 <a class="btn btn-ghost" href="./">← 返回</a>
@@ -55,11 +58,24 @@
                     <i class="fa-solid fa-book-open me-2"></i>简介
                 </h3>
                 <div id="lang-overview" class="text-secondary" style="text-indent:2em;">
-                    
+                  C#是一门广泛应用于各个领域的强大语言，由Microsoft支持。C#语法灵活、环境丰富，涉猎AI应用、云原生、游戏、企业服务、桌面应用、上位机等诸多场景。核心环境.NET开源可控，社区框架诸多，服务于现代软件工程。
                 </div>
             </div>
             <div class="col-12 col-lg-5">
-                <div class="row g-3" id="lang-stats"></div>
+                <div class="row g-3" id="lang-stats">
+                  <div class="col-12 col-sm-6">
+                    <div class="stat"><p class="k mb-0">首次发布</p><p class="v mb-0">2002年</p></div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <div class="stat"><p class="k mb-0">典型范式</p><p class="v mb-0">泛型 / 事件 / 声明式</p></div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <div class="stat"><p class="k mb-0">代表生态</p><p class="v mb-0">ASP.NET / Unity / Avalonia</p></div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <div class="stat"><p class="k mb-0">语言气质</p><p class="v mb-0">工程化 / 类型安全 / 持续演进</p></div>
+                  </div>
+                </div>
             </div>
         </div>
     </div>
@@ -70,16 +86,36 @@
                 <h3 class="section-title mb-3">
                     <i class="fa-solid fa-lightbulb me-2"></i>设计目标与特性
                 </h3>
-                <div id="lang-features" class="d-flex flex-wrap gap-2"></div>
+                <div id="lang-features" class="d-flex flex-wrap gap-2">
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">LINQ</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">异步编程</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">泛型</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">OOP</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">简洁</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">类型推断</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">模式匹配</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">反射</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">现代化</span>
+                </div>
 
-                <div class="mt-3 text-secondary" id="lang-notes" style="text-indent:2em;"></div>
+                <div class="mt-3 text-secondary" id="lang-notes" style="text-indent:2em;">如果你写过Unity、ASP.NET或Avalonia等，你会特别熟悉“生产力+工具链”这条主线：语言特性往往围绕工程可维护性与开发体验不断优化。C#的语法非常灵活，性能也优异，并且数十年来一直不断迭代着特性。谁能想到，这样一门语言的最初目标只是为了成为一门现代、简单、通用的面向对象编程语言呢？</div>
             </div>
             
             <div class="col-12 col-lg-6">
                 <h3 class="section-title mb-3">
                     <i class="fa-solid fa-terminal me-2"></i>语法示例
                 </h3>
-                <pre class="codebox"><code id="lang-code" class="language-csharp"></code></pre>
+                <pre class="codebox"><code id="lang-code" class="language-csharp">using System;
+
+public class Demo
+{
+  public static void Main()
+  {
+    string name = "C#";
+    Console.WriteLine($"Hello, {name}!");
+  }
+}
+</code></pre>
             </div>
         </div>
     </div>
@@ -88,7 +124,20 @@
         <h3 class="section-title mb-3">
             <i class="fa-solid fa-timeline me-2"></i>发展时间线
         </h3>
-        <div class="timeline" id="lang-timeline"></div>
+        <div class="timeline" id="lang-timeline">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2002</div><div class="tl-desc text-secondary">随着VS .NET 2002的发布，C# 1.0面世。彼时，C#还是一门富有潜力的语言，相较于如今的C#，它尚未具备的功能不计其数。但它当时已经具备了面向对象的基本概念。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2003</div><div class="tl-desc text-secondary">VS .NET 2003带来了C# 1.2。这个次要版本值得注意的一点是：异步编程模式。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2005</div><div class="tl-desc text-secondary">C# 2.0引入了泛型，这使得C#程序可以更加灵活地对不同类型进行操作。除此之外，匿名函数、迭代器等能力也成为了现代C#的基石。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2007</div><div class="tl-desc text-secondary">C# 3.0推出，这个版本依旧令人惊喜不断。例如，自动实现的属性；LINQ将查询表达式引入程序逻辑中；箭头函数、var类型推断等特性也是在这个版本引入的。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2010</div><div class="tl-desc text-secondary">C# 4.0推出，这个版本最知名的功能是命名参数和可选参数。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2012</div><div class="tl-desc text-secondary">C# 5.0引入了async/await异步模型。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2015</div><div class="tl-desc text-secondary">C# 6.0带来表达式体成员、字符串内插等改进。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2017</div><div class="tl-desc text-secondary">C# 7.0引入out变量、元组、模式匹配等，同期.NET Core 1.0发布，标志跨平台时代。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2018</div><div class="tl-desc text-secondary">C# 7.3和.NET Core 2.2继续完善生态。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2019</div><div class="tl-desc text-secondary">C# 8.0为.NET Core引入更多现代特性，如using声明、范围运算符等。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2020</div><div class="tl-desc text-secondary">C# 9.0引入目标类型的new表达式；同时.NET 5.0推出，进入跨平台时代。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2021+</div><div class="tl-desc text-secondary">由于作者主要在Unity中使用C#，Unity对C#的支持停留在C# 9.0，后续特性会继续观察。</div></div>
+        </div>
     </div>
     
     <div class="page-card animate__animated animate__fadeInUp">
@@ -98,11 +147,22 @@
         <div class="row g-3">
             <div class="col-12 col-lg-6">
                 <h5 class="fw-bold mb-2" style="color:var(--deep);">常见使用场景</h5>
-                <ul class="mb-0" id="lang-uses"></ul>
+                <ul class="mb-0" id="lang-uses">
+                  <li>企业应用与后端服务</li>
+                  <li>桌面客户端</li>
+                  <li>游戏开发</li>
+                  <li>工具链与自动化脚本</li>
+                </ul>
             </div>
             <div class="col-12 col-lg-6">
                 <h5 class="fw-bold mb-2" style="color:var(--deep);">代表平台</h5>
-                <ul class="mb-0" id="lang-ecosystem"></ul>
+                <ul class="mb-0" id="lang-ecosystem">
+                  <li>CLR / .NET Runtime</li>
+                  <li>NuGet生态</li>
+                  <li>ASP.NET Core</li>
+                  <li>Unity</li>
+                  <li>Roslyn编译器</li>
+                </ul>
             </div>
         </div>
     </div>

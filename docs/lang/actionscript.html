@@ -25,6 +25,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.css">
 
   <link rel="stylesheet" href="../css/lang/template.css"/>
+  <style>
+    :root{--bg:#fff1f2;--brand:#b91c1c;--brand2:#ff2d55;--deep:#180506;--accent:#f43f5e}
+  </style>
 </head>
 
 <body>
@@ -37,7 +40,7 @@
             </div>
 
             <h1 class="display-5 fw-bold mb-0" id="lang-title">ActionScript</h1>
-            <p class="lead mb-0" id="lang-subtitle"></p>
+            <p class="lead mb-0" id="lang-subtitle">交互媒体的启蒙者：动态、时间轴、事件流</p>
             <div class="d-flex flex-wrap gap-2 justify-content-center mt-2" id="lang-tags"></div>
             <div class="d-flex gap-2 mt-3">
                 <a class="btn btn-ghost" href="./">← 返回</a>
@@ -55,11 +58,24 @@
                     <i class="fa-solid fa-book-open me-2"></i>简介
                 </h3>
                 <div id="lang-overview" class="text-secondary" style="text-indent:2em;">
-                    
+                  ActionScript主要用于交互内容开发，现由Wipro维护。ActionScript具备完整的面向对象结构，适用于工程化开发，主要应用于大型网页游戏、富媒体交互课件、企业软件、动画软件、独立游戏等领域。核心环境AIR先后由Adobe、Harman和Wipro维护。
                 </div>
             </div>
             <div class="col-12 col-lg-5">
-                <div class="row g-3" id="lang-stats"></div>
+                <div class="row g-3" id="lang-stats">
+                  <div class="col-12 col-sm-6">
+                    <div class="stat"><p class="k mb-0">首次发布</p><p class="v mb-0">1997年</p></div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <div class="stat"><p class="k mb-0">典型应用</p><p class="v mb-0">跨平台交互软件开发</p></div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <div class="stat"><p class="k mb-0">运行环境</p><p class="v mb-0">AIR / Royale / Flash Player</p></div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <div class="stat"><p class="k mb-0">语言风格</p><p class="v mb-0">ECMA-262 / ECMA-357</p></div>
+                  </div>
+                </div>
             </div>
         </div>
     </div>
@@ -70,16 +86,36 @@
                 <h3 class="section-title mb-3">
                     <i class="fa-solid fa-lightbulb me-2"></i>设计目标与特性
                 </h3>
-                <div id="lang-features" class="d-flex flex-wrap gap-2"></div>
+                <div id="lang-features" class="d-flex flex-wrap gap-2">
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">事件流</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">Stage3D</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">反射</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">类型系统</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">显示对象</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">OOP</span>
+                  <span class="badge text-bg-light border" style="border-radius:999px;font-weight:800;">E4X</span>
+                </div>
 
-                <div class="mt-3 text-secondary" id="lang-notes" style="text-indent:2em;"></div>
+                <div class="mt-3 text-secondary" id="lang-notes" style="text-indent:2em;">从早期的Flash到后来的AIR，如果你尝试在这些平台进行开发，你会发现它们的核心思想是事件流。ActionScript几乎无处不用事件，这也是人机交互的一个特点，用户的每一次输入都可以视作一个事件，而媒体只需要对事件进行响应即可。当事件流足够合理之时，整个交互程序便架构完善了。</div>
             </div>
             
             <div class="col-12 col-lg-6">
                 <h3 class="section-title mb-3">
                     <i class="fa-solid fa-terminal me-2"></i>语法示例
                 </h3>
-                <pre class="codebox"><code id="lang-code" class="language-actionscript"></code></pre>
+                <pre class="codebox"><code id="lang-code" class="language-actionscript">package {
+  import flash.display.Sprite;
+  import flash.text.TextField;
+
+  public class Main extends Sprite {
+    public function Main() {
+      var t:TextField = new TextField();
+      t.text = "Hello, ActionScript!";
+      addChild(t);
+    }
+  }
+}
+</code></pre>
             </div>
         </div>
     </div>
@@ -88,7 +124,17 @@
         <h3 class="section-title mb-3">
             <i class="fa-solid fa-timeline me-2"></i>发展时间线
         </h3>
-        <div class="timeline" id="lang-timeline"></div>
+        <div class="timeline" id="lang-timeline">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1997</div><div class="tl-desc text-secondary">Flash 2.0附带了一个脚本功能，这使得动画可被控制，而非简单的线性时间轴。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1999</div><div class="tl-desc text-secondary">Flash 4.0时期，脚本功能被称作Actions，并具备基本程序结构语法。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2000</div><div class="tl-desc text-secondary">ActionScript 1.0推出，采用ECMAScript原型编程，支持过程式和面向对象编程。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2002</div><div class="tl-desc text-secondary">引入事件侦听器模型，使异步编程更灵活。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2003</div><div class="tl-desc text-secondary">ActionScript 2.0引入类、extends、implements和强类型声明。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2007</div><div class="tl-desc text-secondary">ActionScript 3.0成为完整的面向对象语言，引入DOM3事件模型与更高性能的虚拟机。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2008</div><div class="tl-desc text-secondary">引入Vector.<T>作为泛型数组；AIR 1.0发布，标志ActionScript走向应用开发。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2022</div><div class="tl-desc text-secondary">ActionScript 3.1引入空值合并、可选链等现代语法，AIR 50.0发布。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2024</div><div class="tl-desc text-secondary">AIR 51.0发布，引入单精度浮点数float以提升内存与性能表现。</div></div>
+        </div>
     </div>
     
     <div class="page-card animate__animated animate__fadeInUp">
@@ -98,11 +144,22 @@
         <div class="row g-3">
             <div class="col-12 col-lg-6">
                 <h5 class="fw-bold mb-2" style="color:var(--deep);">常见使用场景</h5>
-                <ul class="mb-0" id="lang-uses"></ul>
+                <ul class="mb-0" id="lang-uses">
+                  <li>客户端应用</li>
+                  <li>游戏开发</li>
+                  <li>多媒体课件与互动内容</li>
+                  <li>网页互动动画与广告</li>
+                </ul>
             </div>
             <div class="col-12 col-lg-6">
                 <h5 class="fw-bold mb-2" style="color:var(--deep);">代表平台</h5>
-                <ul class="mb-0" id="lang-ecosystem"></ul>
+                <ul class="mb-0" id="lang-ecosystem">
+                  <li>AVM2 / Adobe AIR</li>
+                  <li>Flash Player</li>
+                  <li>APM包管理器</li>
+                  <li>Starling</li>
+                  <li>Adobe Animate</li>
+                </ul>
             </div>
         </div>
     </div>

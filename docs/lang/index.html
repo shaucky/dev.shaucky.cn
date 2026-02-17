@@ -58,7 +58,59 @@
             <i class="fa-solid fa-list-check me-2"></i>语言条目
           </h3>
 
-          <div class="row g-3" id="lang-list"></div>
+          <div class="row g-3" id="lang-list">
+            <div class="col-12">
+              <a class="text-decoration-none" href="./csharp.html">
+                <div class="stat" style="height:100%;">
+                  <div class="d-flex align-items-start justify-content-between gap-3">
+                    <div>
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-hashtag" style="color:var(--brand);"></i>
+                        <span class="fw-bold" style="color:var(--deep);font-size:1.05rem;">C#</span>
+                      </div>
+                      <div class="text-secondary mt-1">软件工程的适格者：现代、强类型、跨平台</div>
+                      <div class="d-flex flex-wrap gap-2 mt-2">
+                        <span class="badge-soft">2000s</span>
+                        <span class="badge-soft">.NET</span>
+                        <span class="badge-soft">桌面应用</span>
+                        <span class="badge-soft">游戏开发</span>
+                        <span class="badge-soft">云原生</span>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <span class="btn btn-brand" style="pointer-events:none;">进入</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-12">
+              <a class="text-decoration-none" href="./actionscript.html">
+                <div class="stat" style="height:100%;">
+                  <div class="d-flex align-items-start justify-content-between gap-3">
+                    <div>
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-file-code" style="color:var(--brand);"></i>
+                        <span class="fw-bold" style="color:var(--deep);font-size:1.05rem;">ActionScript</span>
+                      </div>
+                      <div class="text-secondary mt-1">交互媒体的启蒙者：动态、时间轴、事件流</div>
+                      <div class="d-flex flex-wrap gap-2 mt-2">
+                        <span class="badge-soft">1995s</span>
+                        <span class="badge-soft">AIR</span>
+                        <span class="badge-soft">桌面应用</span>
+                        <span class="badge-soft">游戏开发</span>
+                        <span class="badge-soft">互联网</span>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <span class="btn btn-brand" style="pointer-events:none;">进入</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
 
           <div class="mt-3 text-secondary" style="text-indent:2em;" id="lang-note">
             不在这里的语言不一定是我没有接触过的，但可能我只“会一点点”或仅短期接触过——显然这不能算作最为熟悉。
@@ -98,75 +150,17 @@
 
   <script>
     const PAGE_THEME = { bg:"#f7f7f8", brand:"#4b5563", brand2:"#6b7280", deep:"#111827", accent:"#9ca3af" };
-
-    const LANG_LIST = [
-      {
-        key: "csharp",
-        name: "C#",
-        subtitle: "软件工程的适格者：现代、强类型、跨平台",
-        tags: ["2000s", ".NET", "桌面应用", "游戏开发", "云原生"],
-        href: "./csharp.html",
-        icon: "fa-solid fa-hashtag"
-      },
-      {
-        key: "actionscript",
-        name: "ActionScript",
-        subtitle: "交互媒体的启蒙者：动态、时间轴、事件流",
-        tags: ["1995s", "AIR", "桌面应用", "游戏开发", "互联网"],
-        href: "./actionscript.html",
-        icon: "fa-solid fa-file-code"
-      }
-    ];
-
     function applyTheme(theme) {
       if (!theme) return;
       const root = document.documentElement;
       const map = { bg:'--bg', card:'--card', text:'--text', muted:'--muted', brand:'--brand', brand2:'--brand2', deep:'--deep', accent:'--accent' };
       Object.keys(map).forEach(k => theme[k] && root.style.setProperty(map[k], theme[k]));
     }
-
-    function renderList(list) {
-      const box = document.getElementById('lang-list');
-
-      box.innerHTML = '';
-
-      (list || []).forEach(item => {
-        const col = document.createElement('div');
-        col.className = 'col-12';
-        col.innerHTML = `
-          <a class="text-decoration-none" href="${item.href}">
-            <div class="stat" style="height:100%;">
-              <div class="d-flex align-items-start justify-content-between gap-3">
-                <div>
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="${item.icon || 'fa-solid fa-code'}" style="color:var(--brand);"></i>
-                    <span class="fw-bold" style="color:var(--deep);font-size:1.05rem;">${item.name || ''}</span>
-                  </div>
-                  <div class="text-secondary mt-1">${item.subtitle || ''}</div>
-                  <div class="d-flex flex-wrap gap-2 mt-2">
-                    ${(item.tags || []).map(t => `<span class="badge-soft">${t}</span>`).join('')}
-                  </div>
-                </div>
-                <div class="d-flex align-items-center">
-                  <span class="btn btn-brand" style="pointer-events:none;">进入</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        `;
-        box.appendChild(col);
-      });
-
-      if (typeof WOW === 'function') new WOW().init();
-    }
-
     document.addEventListener('DOMContentLoaded', function(){
       applyTheme(PAGE_THEME);
-
       const c = document.getElementById('footer-contacts');
       if (c) c.style.visibility = '';
-
-      renderList(LANG_LIST);
+      if (typeof WOW === 'function') new WOW().init();
     });
   </script>
 
