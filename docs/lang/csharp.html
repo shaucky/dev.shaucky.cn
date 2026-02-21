@@ -41,7 +41,13 @@
 
             <h1 class="display-5 fw-bold mb-0" id="lang-title">C#</h1>
             <p class="lead mb-0" id="lang-subtitle">软件工程的适格者：现代、强类型、跨平台</p>
-            <div class="d-flex flex-wrap gap-2 justify-content-center mt-2" id="lang-tags"></div>
+            <div class="d-flex flex-wrap gap-2 justify-content-center mt-2" id="lang-tags">
+              <span class="badge-soft">2000s</span>
+              <span class="badge-soft">.NET</span>
+              <span class="badge-soft">桌面应用</span>
+              <span class="badge-soft">游戏开发</span>
+              <span class="badge-soft">云原生</span>
+            </div>
             <div class="d-flex gap-2 mt-3">
                 <a class="btn btn-ghost" href="./">← 返回</a>
                 <a class="btn btn-brand" href="#content">开始阅读</a>
@@ -189,118 +195,10 @@ public class Demo
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
   <script>
-    const LANG_DATA = {
-      name: "C#",
-      subtitle: "软件工程的适格者：现代、强类型、跨平台",
-      tags: ["2000s", ".NET", "桌面应用", "游戏开发", "云原生"],
-      theme: { bg:"#f6f8ff", brand:"#6b4ee6", brand2:"#0ea5e9", deep:"#1a1037", accent:"#22c55e" },
-      overview: "C#是一门广泛应用于各个领域的强大语言，由Microsoft支持。C#语法灵活、环境丰富，涉猎AI应用、云原生、游戏、企业服务、桌面应用、上位机等诸多场景。核心环境.NET开源可控，社区框架诸多，服务于现代软件工程。",
-      stats: [
-        { k:"首次发布", v:"2002年" },
-        { k:"典型范式", v:"泛型 / 事件 / 声明式" },
-        { k:"代表生态", v:"ASP.NET / Unity / Avalonia" },
-        { k:"语言气质", v:"工程化 / 类型安全 / 持续演进" }
-      ],
-      timeline: [
-        { year:"2002", text:"随着VS .NET 2002的发布，C# 1.0面世。彼时，C#还是一门富有潜力的语言，相较于如今的C#，它尚未具备的功能不计其数。但它当时已经具备了面向对象的基本概念。" },
-        { year:"2003", text:"VS .NET 2003带来了C# 1.2。这个次要版本值得注意的一点是：异步编程模式。" },
-        { year:"2005", text:"C# 2.0引入了泛型，这使得C#程序可以更加灵活地对不同类型进行操作。除此之外，匿名函数、迭代器等能力也成为了现代C#的基石。" },
-        { year:"2007", text:"C# 3.0推出，这个版本依旧令人惊喜不断。例如，自动实现的属性，当一个属性只需要读写而没有其它操作时，源代码不再需要显式定义字段；LINQ则将一套贴近于SQL的查询表达式引入了程序逻辑中；箭头函数、var类型推断等特性也是在这个版本引入的。" },
-        { year:"2010", text:"转眼间到了2010年，C# 4.0推出，这个版本最知名的功能是命名参数和可选参数，也就是说，从这个版本开始，调用函数不再必须按顺序传值。" },
-        { year:"2012", text:"虽然引入的特性极少，但是这一年推出的C# 5.0引入了——强大而便利的async、await异步模型。" },
-        { year:"2015", text:"C# 6.0带来了一些改进，例如，表达式体成员（即成员定义用箭头指向表达式的写法）、可选链运算符等。事实上，字符串内插也是直到这个版本才引入的特性，尽管如今的入门教程都会广泛使用它。" },
-        { year:"2017", text:"C# 7.0也不同凡响，这里有一些知名的特性，例如，out变量、元组、模式匹配、ref变量别名等。同一时期，.NET Core 1.0发布，这可以视作现代.NET的前身，它标志着C#在官方支持下成为了跨平台的语言。C# 7.1和C# 7.2也是在这一年更新的，有一个不知名但实用的特性：private protected修饰符。" },
-        { year:"2018", text:"几乎是紧随着C# 7.0的步伐，C# 7.3很快推出。这个版本主要围绕现有功能的改进。此外，截至这一年的年底，.NET Core 2.2发布。" },
-        { year:"2019", text:"C# 8.0是首个专门面向.NET Core的版本。这个版本引入了using声明、readonly修饰符、范围运算符等实用的特性，并且为模式匹配迭代了更多的方式。" },
-        { year:"2020", text:"C# 9.0引入最知名的特性是目标类型的new表达式，也就是构造函数可以省略类名的写法。除此之外是不太实用，但或许为C#作为脚本提供了基础的顶级语句。箭头函数内的弃元也是在这个版本得到支持的。同时，.NET 5.0推出，代表.NET正式进入跨平台时代。" },
-        { year:"2021+", text:"由于本人主要使用C#进行Unity开发，而Unity目前对C#的支持停滞于C# 9.0。因此本人对后续版本的特性相对陌生，暂时留白。" }
-      ],
-      features: ["LINQ", "异步编程", "泛型", "OOP", "简洁", "类型推断", "模式匹配", "反射", "现代化"],
-      notes: "如果你写过Unity、ASP.NET或Avalonia等，你会特别熟悉“生产力+工具链”这条主线：语言特性往往围绕工程可维护性与开发体验不断优化。C#的语法非常灵活，性能也优异，并且数十年来一直不断迭代着特性。谁能想到，这样一门语言的最初目标只是为了成为一门现代、简单、通用的面向对象编程语言呢？",
-      code: "using System;\n\npublic class Demo\n{\n  public static void Main()\n  {\n    string name = \"C#\";\n    Console.WriteLine($\"Hello, {name}!\");\n  }\n}\n",
-      prismLang: "csharp",
-      uses: ["企业应用与后端服务","桌面客户端","游戏开发","工具链与自动化脚本"],
-      ecosystem: ["CLR / .NET Runtime","NuGet生态","ASP.NET Core","Unity","Roslyn编译器"]
-    };
-
-    function applyTheme(theme) {
-      if (!theme) return;
-      const root = document.documentElement;
-      const map = { bg:'--bg', card:'--card', text:'--text', muted:'--muted', brand:'--brand', brand2:'--brand2', deep:'--deep', accent:'--accent' };
-      Object.keys(map).forEach(k => theme[k] && root.style.setProperty(map[k], theme[k]));
-    }
-
-    function renderLanguage(data) {
-      if (!data) return;
-      applyTheme(data.theme);
-
-      document.getElementById('lang-title').textContent = data.name || '';
-      document.getElementById('lang-subtitle').textContent = data.subtitle || '';
-
-      const tagBox = document.getElementById('lang-tags');
-      tagBox.innerHTML = '';
-      (data.tags || []).forEach(t => {
-        const span = document.createElement('span');
-        span.className = 'badge-soft';
-        span.textContent = t;
-        tagBox.appendChild(span);
-      });
-
-      document.getElementById('lang-overview').textContent = data.overview || '';
-
-      const stats = document.getElementById('lang-stats');
-      stats.innerHTML = '';
-      (data.stats || []).forEach(s => {
-        const col = document.createElement('div');
-        col.className = 'col-12 col-sm-6';
-        col.innerHTML = `<div class="stat"><p class="k mb-0">${s.k||''}</p><p class="v mb-0">${s.v||''}</p></div>`;
-        stats.appendChild(col);
-      });
-
-      const tl = document.getElementById('lang-timeline');
-      tl.innerHTML = '';
-      (data.timeline || []).forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'tl-item';
-        div.innerHTML = `<div class="tl-dot"></div><div class="tl-year">${item.year||''}</div><div class="tl-desc text-secondary">${item.text||''}</div>`;
-        tl.appendChild(div);
-      });
-
-      const feat = document.getElementById('lang-features');
-      feat.innerHTML = '';
-      (data.features || []).forEach(f => {
-        const span = document.createElement('span');
-        span.className = 'badge text-bg-light border';
-        span.style.borderRadius = '999px';
-        span.style.fontWeight = '800';
-        span.textContent = f;
-        feat.appendChild(span);
-      });
-
-      document.getElementById('lang-notes').textContent = data.notes || '';
-      const codeEl = document.getElementById('lang-code');
-      codeEl.className = '';
-      codeEl.classList.add(`language-${data.prismLang || 'clike'}`);
-      codeEl.textContent = data.code || '';
-      if (window.Prism) {
-        Prism.highlightElement(codeEl);
-      }
-
-      const uses = document.getElementById('lang-uses');
-      uses.innerHTML = '';
-      (data.uses || []).forEach(u => { const li=document.createElement('li'); li.textContent=u; uses.appendChild(li); });
-
-      const eco = document.getElementById('lang-ecosystem');
-      eco.innerHTML = '';
-      (data.ecosystem || []).forEach(e => { const li=document.createElement('li'); li.textContent=e; eco.appendChild(li); });
-
-      if (typeof WOW === 'function') new WOW().init();
-    }
-
     document.addEventListener('DOMContentLoaded', function(){
       const c = document.getElementById('footer-contacts');
       if (c) c.style.visibility = '';
-      renderLanguage(LANG_DATA);
+      if (typeof WOW === 'function') new WOW().init();
     });
   </script>
   <link rel="stylesheet" href="../css/font/fontawesome.min.css" />
