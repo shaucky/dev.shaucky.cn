@@ -24,6 +24,7 @@
 
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.8/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.css">
 
   <link rel="stylesheet" href="../css/main/template.css"/>
 </head>
@@ -50,8 +51,20 @@
     </div>
   </header>
 
-  <main class="container my-5" id="content">
+  <main class="container my-5">
     <div class="page-card animate__animated animate__fadeInUp">
+      <h3 class="section-title mb-3">
+        <i class="fa-solid fa-signs-post me-2"></i>凡是过往皆为序章
+      </h3>
+      <div class="text-secondary" style="text-indent:2em;">
+        <p>我写的第一行代码，或许是<code id="lang-code" class="language-actionscript">stop();</code>。那是我读初三的时候，2016年，用<b>ActionScript</b>（AS）1.0&2.0去控制Flash动画的播放。后来很快，我学习了AS3。AS3是一门非常贴近传统面向对象编程语言的语言，后者典型的例子就是Java和C#。</p>
+        <p>所以我非常喜欢传统的面向对象编程语言。出于众所周知的原因，次年AS最广泛的运行环境Flash Player失去了市场，变得无人问津。但我学习AS只是因为当初玩Flash页游比较多，用AS去操作Flash资产二次创作最方便。对我来说最典型的例子就是2017年起开发的某款页游的对战动画播放器，我也在这个过程中逐渐理解了面向对象编程。而且高中去接触其它语言的契机不多。</p>
+        <p>后来差不多到了读大二的时候，2022年，我开始为就业考虑，学习了<b>C#</b>。我主要用C#进行Unity开发，同样也是做一些小玩具自己玩玩。在做各种小玩具的过程中，我也累积了很多深厚的经验。也正是因为这一路上积累的各种经验，我第一次参加Game Jam便独自承担了游戏的程序，然后在多次Jam中创作出不一样的体验。</p>
+        <p>现在呢，我一直相信，我总会有机会，去做一些让自己喜欢、让自己自豪的东西。即便现在Vibe Coding大行其道，我还是希望会有契机，去掌握新的语言。</p>
+      </div>
+    </div>
+
+    <div class="page-card animate__animated animate__fadeInUp" id="content">
       <div class="row g-3 align-items-stretch">
         <div class="col-12 col-lg-12">
           <h3 class="section-title mb-3">
@@ -96,7 +109,7 @@
                       </div>
                       <div class="text-secondary mt-1">交互媒体的启蒙者：动态、时间轴、事件流</div>
                       <div class="d-flex flex-wrap gap-2 mt-2">
-                        <span class="badge-soft">1995s</span>
+                        <span class="badge-soft">1990s</span>
                         <span class="badge-soft">AIR</span>
                         <span class="badge-soft">桌面应用</span>
                         <span class="badge-soft">游戏开发</span>
@@ -147,6 +160,8 @@
   <script src="../js/font/brands.min.js"></script>
   <script src="../js/font/solid.min.js"></script>
   <script src="../js/wow.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
   <script>
     const PAGE_THEME = { bg:"#f7f7f8", brand:"#4b5563", brand2:"#6b7280", deep:"#111827", accent:"#9ca3af" };
