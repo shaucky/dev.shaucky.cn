@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>开发者 - Shaucky</title>
+    <meta name="description" content="Shaucky的开发者站点">
+
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.8/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.css">
+    <link rel="stylesheet" href="../css/main/template.css" />
+    <link rel="stylesheet" href="../css/font/fontawesome.min.css" />
+    <link rel="stylesheet" href="../css/font/brands.min.css" />
+    <link rel="stylesheet" href="../css/font/solid.min.css" />
+
+    <style>
+        header.fullscreen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
+        }
+
+        .nav-grid a {
+            text-decoration: none;
+        }
+
+        .nav-card {
+            min-width: 12rem;
+            border-radius: 12px;
+            padding: 1rem;
+            background: linear-gradient(180deg,
+                    color-mix(in srgb, var(--brand) 14%, rgba(255, 255, 255, 0.04)),
+                    color-mix(in srgb, var(--brand2) 8%, rgba(255, 255, 255, 0.02)));
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+        }
+
+        .nav-card .title {
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .nav-card .desc {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: .92rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="fullscreen">
+        <div class="container text-center">
+            <div class="animate__animated animate__fadeInDown">
+                <div class="brand-pill mb-4">
+                    <i class="fa-brands fa-dev"></i>
+                    <span>首页</span>
+                </div>
+
+                <h1 class="display-4 fw-bold mb-2" style="color:#fff;">晓痴的开发者站点</h1>
+                <p class="lead mb-4 animate__animated animate__fadeInDown" style="color:rgba(255,255,255,0.9);">Codin' life. Codin' love.</p>
+            </div>
+
+            <div class="animate__animated animate__fadeInUp">
+                <div class="row row-cols-1 row-cols-sm-2 g-3 justify-content-center nav-grid"
+                    style="max-width:880px;margin:0 auto;">
+                    <div class="col">
+                        <a href="./lang/" class="text-decoration-none">
+                            <div class="nav-card text-start">
+                                <div class="d-flex flex-column align-items-start gap-1">
+                                    <div class="title">编程语言概览</div>
+                                    <div class="desc">该分区介绍了我最为熟悉的几门计算机语言</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="https://gamejam.shaucky.cn" class="text-decoration-none" rel="noopener noreferrer">
+                            <div class="nav-card text-start">
+                                <div class="d-flex flex-column align-items-start gap-1">
+                                    <div class="title">游戏创作活动</div>
+                                    <div class="desc">该分区展示了我在各种游戏创作活动中参与的游戏作品</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fixed-bottom">
+            <p>©2026 Shaucky. All Rights Reserved.</p>
+        </div>
+    </header>
+
+
+    <script src="../js/font/fontawesome.min.js"></script>
+    <script src="../js/font/brands.min.js"></script>
+    <script src="../js/font/solid.min.js"></script>
+    <script src="../js/wow.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof WOW === 'function') new WOW().init();
+        });
+    </script>
+</body>
+
+</html>
