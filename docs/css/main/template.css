@@ -35,7 +35,7 @@ header::before {
     z-index: 0;
     pointer-events: none;
     background: inherit;
-    filter: blur(110px) brightness(0.55);
+    filter: blur(110px) brightness(1.45);
     opacity: .95;
 }
 
