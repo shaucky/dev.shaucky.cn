@@ -180,10 +180,6 @@ pre.codebox code {
     background: rgba(255, 255, 255, .08);
 }
 
-footer {
-    user-select: none;
-}
-
 footer > * {
     margin-bottom: 20px;
 }
