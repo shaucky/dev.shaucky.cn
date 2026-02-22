@@ -24,16 +24,20 @@
             background: #ffffff;
             z-index: 9999;
             opacity: 1;
-            transition: opacity .45s ease;
+            transition: opacity 0.5s ease;
             pointer-events: auto;
             will-change: opacity;
         }
-
+    
         #page-transition.pt-hidden {
             opacity: 0;
             pointer-events: none;
         }
-
+    
+        header::before {
+            filter: blur(110px) brightness(1.45);
+        }
+    
         header.fullscreen {
             min-height: 100vh;
             display: flex;
@@ -43,11 +47,11 @@
             justify-content: center;
             padding: 0 1rem;
         }
-
+    
         .nav-grid a {
             text-decoration: none;
         }
-
+    
         .nav-card {
             min-width: 12rem;
             height: 6.5rem;
@@ -61,22 +65,22 @@
             box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
             transition: transform .18s ease, box-shadow .18s ease;
         }
-
+    
         .nav-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
         }
-
+    
         .nav-card .title {
             font-weight: 800;
             color: #fff;
         }
-
+    
         .nav-card .desc {
             color: rgba(255, 255, 255, 0.9);
             font-size: .92rem;
         }
-
+    
         #starfield {
             position: absolute;
             inset: 0;
@@ -86,8 +90,11 @@
             pointer-events: none;
             display: block;
         }
-
-        header .container { position: relative; z-index: 1; }
+    
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 
@@ -256,10 +263,7 @@
 
             function hideOverlay() {
                 overlay.classList.add('pt-hidden');
-                overlay.addEventListener('transitionend', function _remove() {
-                    overlay.style.display = 'none';
-                    overlay.removeEventListener('transitionend', _remove);
-                });
+                overlay.style.display = 'none';
             }
 
             function showOverlay() {
@@ -279,13 +283,34 @@
 
                 if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
                 
-                e.preventDefault();
-                
-                overlay.style.display = '';
-                overlay.classList.remove('pt-hidden');
-                overlay.getBoundingClientRect();
-                
-                setTimeout(function () { location.href = a.href; }, 60);
+                (function () {
+                    e.preventDefault();
+                    showOverlay();
+
+                    var navigated = false;
+                    function doNavigate() {
+                        if (navigated) return;
+                        navigated = true;
+                        location.href = a.href;
+                    }
+
+                    function onTransitionEnd(ev) {
+                        if (ev.propertyName === 'opacity') {
+                            overlay.removeEventListener('transitionend', onTransitionEnd);
+                            clearTimeout(fallback);
+                            doNavigate();
+                        }
+                    }
+
+                    // 先监听，再触发过渡（showOverlay 内用 requestAnimationFrame 移除 pt-hidden）
+                    overlay.addEventListener('transitionend', onTransitionEnd);
+
+                    // 备用超时，防止 transitionend 未触发
+                    var fallback = setTimeout(function () {
+                        overlay.removeEventListener('transitionend', onTransitionEnd);
+                        doNavigate();
+                    }, 700);
+                })();
             });
             
             window.addEventListener('pageshow', function (ev) {
