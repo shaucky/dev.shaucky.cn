@@ -1,14 +1,13 @@
 <!doctype html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>开发者 - Shaucky</title>
-    <meta name="description" content="Shaucky的开发者站点">
+    <meta name="description" content="晓痴的开发者站点">
 
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.8/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.css">
     <link rel="stylesheet" href="../css/main/template.css" />
     <link rel="stylesheet" href="../css/font/fontawesome.min.css" />
     <link rel="stylesheet" href="../css/font/brands.min.css" />
@@ -18,6 +17,8 @@
         header.fullscreen {
             min-height: 100vh;
             display: flex;
+            position: relative;
+            overflow: hidden;
             align-items: center;
             justify-content: center;
             padding: 0 1rem;
@@ -55,11 +56,23 @@
             color: rgba(255, 255, 255, 0.9);
             font-size: .92rem;
         }
+
+        #particles-js {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        header .container { position: relative; z-index: 1; }
     </style>
 </head>
 
 <body>
-    <header class="fullscreen">
+    <header class="fullscreen user-select-none">
+        <div id="particles-js" aria-hidden="true"></div>
         <div class="container text-center">
             <div class="animate__animated animate__fadeInDown">
                 <div class="brand-pill mb-4">
@@ -68,7 +81,9 @@
                 </div>
 
                 <h1 class="display-4 fw-bold mb-2" style="color:#fff;">晓痴的开发者站点</h1>
-                <p class="lead mb-4 animate__animated animate__fadeInDown" style="color:rgba(255,255,255,0.9);">Codin' life. Codin' love.</p>
+                <p class="lead mb-4 animate__animated animate__fadeInDown" style="color:rgba(255,255,255,0.9);">
+                    想抵达跨越亿万光年的理想
+                </p>
             </div>
 
             <div class="animate__animated animate__fadeInUp">
@@ -105,16 +120,46 @@
     </header>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="../js/font/fontawesome.min.js"></script>
     <script src="../js/font/brands.min.js"></script>
     <script src="../js/font/solid.min.js"></script>
     <script src="../js/wow.js"></script>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.particlesJS) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {"value": 140, "density": {"enable": true, "value_area": 1200}},
+                        "color": {"value": "#ffffff"},
+                        "shape": {"type": "circle", "stroke": {"width": 0, "color": "#000000"}},
+                        "opacity": {
+                            "value": 0.8,
+                            "random": true,
+                            "anim": {"enable": true, "speed": 0.5, "opacity_min": 0, "sync": false}
+                        },
+                        "size": {
+                            "value": 2,
+                            "random": true,
+                            "anim": {"enable": true, "speed": 1, "size_min": 0.3, "sync": false}
+                        },
+                        "line_linked": {"enable": false},
+                        "move": {"enable": true, "speed": 0.5, "direction": "none", "out_mode": "out"}
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {"onhover": {"enable": false}, "onclick": {"enable": false}, "resize": true},
+                        "modes": {"grab": {"distance": 400, "line_linked": {"opacity": 0.5}}, "bubble": {"distance": 250, "size": 0, "duration": 2, "opacity": 0}, "repulse": {"distance": 200}}
+                    },
+                    "retina_detect": true
+                });
+            }
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             if (typeof WOW === 'function') new WOW().init();
         });
     </script>
 </body>
-
 </html>
