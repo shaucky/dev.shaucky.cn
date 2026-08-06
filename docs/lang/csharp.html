@@ -89,8 +89,23 @@
     </div>
 
     <div class="page-card animate__animated animate__fadeInUp">
+        <h3 class="section-title mb-3">
+            <i class="fa-solid fa-rocket me-2"></i>我的实践
+        </h3>
+        <div class="row g-3">
+            <div class="col-12 col-md-4">
+                <div class="practice-card">
+                    <div class="practice-icon"><i class="fa-solid fa-gamepad"></i></div>
+                    <h5 class="fw-bold mb-2"><a href="https://www.taptap.cn/app/779400" target="_blank" class="text-decoration-none" style="color:var(--bs-light-text-emphasis);">王的刽子手</a></h5>
+                    <p class="text-secondary small">于2025聚光灯GameJam创作的，体量较轻的战棋卡牌游戏，玩家通过控制生命值并探索隐藏机制，发现结局。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-card animate__animated animate__fadeInUp">
         <div class="row g-3 align-items-stretch">
-            <div class="col-12 col-lg-6">
+            <div class="col-12">
                 <h3 class="section-title mb-3">
                     <i class="fa-solid fa-lightbulb me-2"></i>设计目标与特性
                 </h3>
@@ -109,23 +124,33 @@
                 <div class="mt-3 text-secondary" id="lang-notes" style="text-indent:2em;">如果你写过Unity、ASP.NET或Avalonia等，你会特别熟悉“生产力+工具链”这条主线：语言特性往往围绕工程可维护性与开发体验不断优化。C#的语法非常灵活，性能也优异，并且数十年来一直不断迭代着特性。谁能想到，这样一门语言的最初目标只是为了成为一门现代、简单、通用的面向对象编程语言呢？</div>
             </div>
             
-            <div class="col-12 col-lg-6">
-                <h3 class="section-title mb-3">
-                    <i class="fa-solid fa-terminal me-2"></i>语法示例
-                </h3>
-                <pre class="codebox"><code id="lang-code" class="language-csharp">using System;
-
-public class Demo
-{
-  public static void Main()
-  {
-    string name = "C#";
-    Console.WriteLine($"Hello, {name}!");
-  }
-}
-</code></pre>
-            </div>
         </div>
+    </div>
+    
+    <div class="page-card animate__animated animate__fadeInUp">
+        <h3 class="section-title mb-3">
+            <i class="fa-solid fa-terminal me-2"></i>语言风格
+        </h3>
+        <pre class="codebox"><code id="lang-code" class="language-csharp">using UnityEngine;
+using UnityEngine.UI;
+
+namespace My.Sample
+{
+    public class Main : MonoBehaviour
+    {
+        private Text text;
+        
+        private void Awake()
+        {
+            text = transform.GetComponentInChildren&lt;Text&gt;();
+            if (text is not null) 
+            {
+                text.text = "Hello, C#!";
+            }
+            Debug.Log(text?.text);
+        }
+    }
+}</code></pre>
     </div>
     
     <div class="page-card animate__animated animate__fadeInUp">
@@ -140,7 +165,7 @@ public class Demo
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2010</div><div class="tl-desc text-secondary">转眼间到了2010年，C# 4.0推出，这个版本最知名的功能是命名参数和可选参数，也就是说，从这个版本开始，调用函数不再必须按顺序传值。</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2012</div><div class="tl-desc text-secondary">虽然引入的特性极少，但是这一年推出的C# 5.0引入了——强大而便利的async、await异步模型。</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2015</div><div class="tl-desc text-secondary">C# 6.0带来了一些改进，例如，表达式体成员（即成员定义用箭头指向表达式的写法）、可选链运算符等。事实上，字符串内插也是直到这个版本才引入的特性，尽管如今的入门教程都会广泛使用它。</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2017</div><div class="tl-desc text-secondary">C# 7.0也不同凡响，这里有一些知名的特性，例如，out变量、元组、模式匹配、ref变量别名等。同一时期，.NET Core 1.0发布，这可以视作现代.NET的前身，它标志着C#在官方支持下成为了跨平台的语言。C# 7.1和C# 7.2也是在这一年更新的，有一个不知名但实用的特性：private protected修饰符。</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2017</div><div class="tl-desc text-secondary">C# 7.0也不同凡响，这里有一些知名的特性，例如，out变量、元组、模式匹配、ref变量别名等。同一时期，.NET Core 1.0发布，这可以视作现代.NET的前身，它标志着C#在官方支持下成为了跨平台的语言。C# 7.1和C# 7.2也是在这一年更新的，有一个少见但实用的特性：private protected修饰符。</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2018</div><div class="tl-desc text-secondary">几乎是紧随着C# 7.0的步伐，C# 7.3很快推出。这个版本主要围绕现有功能的改进。此外，截至这一年的年底，.NET Core 2.2发布。</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2019</div><div class="tl-desc text-secondary">C# 8.0是首个专门面向.NET Core的版本。这个版本引入了using声明、readonly修饰符、范围运算符等实用的特性，并且为模式匹配迭代了更多的方式。</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2020</div><div class="tl-desc text-secondary">C# 9.0引入最知名的特性是目标类型的new表达式，也就是构造函数可以省略类名的写法。除此之外是不太实用，但或许为C#作为脚本提供了基础的顶级语句。箭头函数内的弃元也是在这个版本得到支持的。同时，.NET 5.0推出，代表.NET正式进入跨平台时代。</div></div>
